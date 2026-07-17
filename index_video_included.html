@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Save More on Everyday Life — Coach Toni | The People's Freedom Network</title>
+<meta name="description" content="Member savings on shopping, dining, travel and everyday services. Independent member page of The People's Freedom Network.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B0A08;
+    --black:#0A0A0A;
+    --pure:#000000;
+    --gold:#EFBE45;
+    --gold-deep:#C79A2E;
+    --carolina:#4B9CD3;
+    --red:#E0202F;
+    --emerald:#2EA46E;
+    --cream:#F2EBDD;
+    --body:#CFCABE;
+    --muted:#8F8B82;
+    --line:rgba(239,190,69,0.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--ink);
+    color:var(--body);
+    font-family:'Montserrat',sans-serif;
+    font-weight:400;
+    line-height:1.7;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--gold);color:var(--ink)}
+  img,svg{display:block;max-width:100%}
+  a{color:var(--gold)}
+
+  /* ---------- disclosure bar ---------- */
+  .disclosure-bar{
+    background:#050403;
+    border-bottom:1px solid rgba(75,156,211,0.35);
+    text-align:center;
+    padding:10px 16px;
+    font-size:0.74rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--carolina);
+    font-weight:700;
+  }
+  .disclosure-bar b{color:var(--carolina);font-weight:700}
+
+  /* ---------- header ---------- */
+  header{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:26px clamp(20px,5vw,64px);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+  }
+  .wordmark{line-height:1.1}
+  .wordmark .name{
+    font-family:'EB Garamond',serif;
+    font-size:1.5rem;font-weight:600;color:var(--cream);letter-spacing:0.02em;
+  }
+  .wordmark .name span{color:var(--gold)}
+  .wordmark .sub{
+    font-size:0.62rem;letter-spacing:0.24em;text-transform:uppercase;color:var(--muted);margin-top:3px;
+  }
+  .header-cta{
+    font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;font-weight:600;
+    color:var(--gold);text-decoration:none;
+    border:1px solid var(--line);border-radius:2px;
+    padding:11px 22px;
+    transition:background .25s ease,color .25s ease;
+    white-space:nowrap;
+  }
+  .header-cta:hover{background:var(--gold);color:var(--ink)}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    text-align:center;
+    padding:clamp(72px,11vw,130px) 24px clamp(64px,9vw,104px);
+    background:
+      radial-gradient(90% 60% at 50% 0%, rgba(239,190,69,0.09), transparent 65%),
+      var(--ink);
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+    width:min(560px,70vw);height:2px;
+    background:linear-gradient(90deg,transparent,var(--carolina),transparent);
+  }
+  .eyebrow{
+    display:inline-block;
+    font-size:0.7rem;letter-spacing:0.32em;text-transform:uppercase;
+    color:var(--gold);font-weight:600;
+    margin-bottom:26px;
+  }
+  .eyebrow::before,.eyebrow::after{content:"—";color:var(--carolina);margin:0 14px;font-weight:400}
+  h1{
+    font-family:'EB Garamond',serif;
+    font-weight:500;
+    font-size:clamp(2.6rem,6.2vw,4.6rem);
+    line-height:1.12;
+    color:var(--cream);
+    max-width:22ch;margin:0 auto;
+  }
+  .rotator{
+    display:block;
+    font-style:italic;
+    color:var(--carolina);
+    min-height:1.25em;
+    position:relative;
+  }
+  .rotator .phrase{
+    position:absolute;left:0;right:0;top:0;
+    opacity:0;transform:translateY(14px);
+    transition:opacity .55s ease,transform .55s ease;
+  }
+  .rotator .phrase.on{opacity:1;transform:none}
+  .hero p.lead{
+    max-width:56ch;margin:26px auto 0;
+    font-size:clamp(0.98rem,1.4vw,1.12rem);
+    font-weight:300;color:var(--body);
+  }
+  .hero .cta-row{margin-top:42px}
+  .cta{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--ink);
+    font-family:'Montserrat',sans-serif;
+    font-weight:700;font-size:0.82rem;
+    letter-spacing:0.18em;text-transform:uppercase;
+    text-decoration:none;
+    padding:19px 46px;
+    border-radius:2px;
+    box-shadow:0 0 0 1px var(--gold),0 14px 34px rgba(239,190,69,0.18);
+    transition:transform .2s ease,box-shadow .2s ease;
+  }
+  .cta:hover{transform:translateY(-2px);box-shadow:0 0 0 1px var(--gold),0 20px 44px rgba(239,190,69,0.28)}
+  .cta:focus-visible,.more-link:focus-visible,.header-cta:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+  .note{font-size:0.8rem;color:var(--muted);margin-top:18px}
+  .more-link{
+    color:var(--gold);text-decoration:none;font-weight:600;letter-spacing:0.04em;
+    border-bottom:1px solid rgba(75,156,211,0.65);padding-bottom:2px;
+    transition:border-color .25s ease,color .25s ease;
+  }
+  .more-link:hover{border-color:var(--carolina);color:var(--cream)}
+  .hero .trust-line{
+    margin-top:52px;
+    display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;
+    font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);
+  }
+  .trust-line .dot{width:5px;height:5px;border-radius:50%;background:var(--carolina)}
+
+  /* ---------- section scaffolding ---------- */
+  section{padding:clamp(64px,9vw,110px) 24px}
+  .wrap{max-width:1080px;margin:0 auto}
+  .sec-head{text-align:center;margin-bottom:clamp(44px,6vw,64px)}
+  .sec-head .sec-rule{width:56px;height:2px;background:var(--carolina);margin:0 auto 22px}
+  h2{
+    font-family:'EB Garamond',serif;font-weight:500;
+    font-size:clamp(1.9rem,3.6vw,2.8rem);
+    color:var(--cream);line-height:1.2;
+  }
+  h2 em{font-style:italic;color:var(--gold)}
+  .sec-head p{max-width:58ch;margin:16px auto 0;font-weight:300;color:var(--body)}
+
+  /* ---------- benefits ---------- */
+  .benefits{background:#070605}
+  .benefit-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+  }
+  .benefit{
+    background:var(--pure);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:4px;
+    padding:34px 30px;
+    transition:border-color .35s ease,transform .35s ease,box-shadow .5s ease;
+  }
+  .benefit:hover{
+    border-color:var(--gold);
+    transform:translateY(-4px);
+    box-shadow:0 0 34px rgba(239,190,69,0.35),0 0 70px rgba(239,190,69,0.12);
+  }
+  .benefit.lit{
+    border-color:rgba(239,190,69,0.55);
+    box-shadow:0 0 30px rgba(239,190,69,0.28),0 0 60px rgba(239,190,69,0.10);
+  }
+  .benefit .glyph{
+    width:44px;height:44px;margin-bottom:20px;
+    color:var(--gold);
+  }
+  .benefit h3{
+    font-family:'EB Garamond',serif;font-weight:600;
+    font-size:1.28rem;color:var(--cream);margin-bottom:10px;
+  }
+  .benefit h3::after{content:"";display:block;width:26px;height:2px;background:var(--carolina);margin-top:8px}
+  .benefit p{font-size:0.9rem;font-weight:300;color:var(--body)}
+  .benefit .fine{
+    display:block;font-size:0.72rem;color:var(--muted);font-style:italic;margin-top:12px;
+  }
+  .benefit.key{position:relative;border-color:rgba(239,190,69,0.35)}
+  .benefit.key::before{
+    content:"Optional Upgrade";
+    position:absolute;top:-11px;left:28px;
+    background:var(--carolina);color:#fff;
+    font-size:0.6rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;
+    padding:4px 12px;border-radius:2px;
+  }
+
+  /* ---------- retailer marquee ---------- */
+  .retailers{background:var(--ink);padding-top:clamp(56px,8vw,90px);padding-bottom:clamp(56px,8vw,90px)}
+  .marquee{
+    overflow:hidden;position:relative;
+    border-top:1px solid rgba(255,255,255,0.07);
+    border-bottom:1px solid rgba(255,255,255,0.07);
+    padding:26px 0;
+  }
+  .cat-label{
+    text-align:center;
+    margin:34px 0 -1px;
+    position:relative;z-index:1;
+  }
+  .cat-label span{
+    display:inline-block;
+    font-size:0.68rem;letter-spacing:0.3em;text-transform:uppercase;
+    color:var(--gold);font-weight:700;
+    padding:6px 20px;
+    border:1px solid rgba(75,156,211,0.55);
+    border-radius:2px;
+    background:var(--pure);
+  }
+  .cat-label:first-of-type{margin-top:0}
+  .track{display:flex;width:max-content;gap:0;animation:slide 38s linear infinite}
+  .marquee.reverse .track{animation:slideBack 44s linear infinite}
+  .marquee:hover .track{animation-play-state:paused}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @keyframes slideBack{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+  .track span{
+    font-family:'EB Garamond',serif;font-size:1.5rem;font-weight:500;color:var(--cream);
+    white-space:nowrap;padding:0 18px;
+    display:flex;align-items:center;gap:36px;
+  }
+  .track span::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--carolina)}
+  .retailers .note{text-align:center;max-width:70ch;margin:26px auto 0}
+
+  /* ---------- offer ---------- */
+  .offer{background:#070605}
+  .offer-card{
+    position:relative;
+    max-width:880px;margin:0 auto;
+    background:
+      radial-gradient(120% 100% at 50% 0%, rgba(255,255,255,0.05), transparent 55%),
+      var(--pure);
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:8px;
+    padding:clamp(44px,6vw,72px) clamp(26px,5vw,72px);
+    text-align:center;
+    box-shadow:0 0 46px rgba(255,255,255,0.07),0 30px 70px rgba(0,0,0,0.6);
+  }
+  .offer-card .rule{
+    width:64px;height:2px;background:var(--carolina);margin:0 auto 26px;
+  }
+  .offer-card h2{margin-bottom:8px}
+  .offer-card .tagline{font-size:0.9rem;font-weight:300;color:var(--muted);margin-bottom:44px}
+  .price-row{
+    display:flex;justify-content:center;align-items:stretch;gap:0;
+    margin-bottom:44px;flex-wrap:wrap;
+  }
+  .price{
+    flex:1;min-width:200px;padding:10px 28px;
+  }
+  .price + .price{border-left:1px solid rgba(75,156,211,0.45)}
+  .price .amount{
+    font-family:'EB Garamond',serif;font-weight:600;
+    font-size:clamp(3rem,5.5vw,4.2rem);color:var(--gold);line-height:1;
+    text-shadow:0 0 30px rgba(239,190,69,0.25);
+  }
+  .price .amount sup{font-size:0.45em;font-weight:500;vertical-align:super}
+  .price .label{
+    font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;
+    color:var(--cream);font-weight:600;margin-top:12px;
+  }
+  .price .detail{font-size:0.78rem;color:var(--muted);margin-top:6px;font-weight:300}
+  .price .label .star{color:var(--carolina);font-size:1.1em;margin-left:2px}
+  .waiver{
+    max-width:56ch;margin:10px auto 0;
+    font-size:0.82rem;font-weight:500;color:var(--carolina);
+  }
+  .offer-card .note{max-width:52ch;margin:0 auto 8px}
+  .offer-card .cta-row{margin-top:34px}
+  .guarantee{
+    display:flex;align-items:center;justify-content:center;gap:22px;
+    margin-top:46px;padding-top:38px;
+    border-top:1px solid rgba(255,255,255,0.08);
+    flex-wrap:wrap;
+  }
+  .seal{width:104px;height:104px;flex-shrink:0}
+  .guarantee-text{max-width:44ch;text-align:left}
+  .guarantee-text b{
+    display:block;font-family:'EB Garamond',serif;font-weight:600;
+    font-size:1.2rem;color:var(--cream);margin-bottom:4px;
+  }
+  .guarantee-text p{font-size:0.84rem;font-weight:300;color:var(--body)}
+
+  /* ---------- testimonials ---------- */
+  .voices{background:var(--ink)}
+  .voice-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:940px;margin:0 auto;
+  }
+  .voice{
+    position:relative;
+    background:var(--pure);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:6px;
+    padding:38px 34px 34px;
+    box-shadow:0 0 26px rgba(75,156,211,0.45),0 0 64px rgba(75,156,211,0.18);
+    transition:box-shadow .4s ease;
+  }
+  .voice:hover{box-shadow:0 0 36px rgba(75,156,211,0.6),0 0 90px rgba(75,156,211,0.25)}
+  .voice blockquote{
+    font-family:'EB Garamond',serif;font-size:1.14rem;font-style:italic;
+    color:var(--cream);line-height:1.6;
+  }
+  .voice .who{margin-top:26px}
+  .voice .who b{
+    display:block;color:var(--gold);font-weight:700;font-size:0.98rem;letter-spacing:0.03em;
+  }
+  .voice .who span{
+    font-size:0.76rem;color:#FFFFFF;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
+  }
+
+  /* ---------- final cta ---------- */
+  .final{
+    text-align:center;
+    background:
+      radial-gradient(80% 90% at 50% 100%, rgba(75,156,211,0.10), transparent 60%),
+      var(--ink);
+  }
+  .final h2{max-width:22ch;margin:0 auto}
+  .final h2 em{color:var(--carolina)}
+  .final .cta-row{margin-top:38px}
+
+  /* ---------- video ---------- */
+  .video-sec{
+    background:var(--ink);
+    padding:70px 24px 30px;
+    text-align:center;
+  }
+  .video-sec .sec-rule{margin:0 auto 18px}
+  .video-sec h2{margin-bottom:26px}
+  .video-sec h2 em{color:var(--carolina)}
+  .video-frame{
+    max-width:860px;margin:0 auto;
+    border:1px solid rgba(239,190,69,0.45);
+    border-radius:14px;padding:10px;background:#000;
+    box-shadow:0 0 46px rgba(239,190,69,0.14);
+  }
+  .video-frame video{
+    display:block;width:100%;height:auto;border-radius:8px;background:#000;
+  }
+  .video-sec .watch-note{
+    margin-top:16px;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);
+  }
+
+  /* ---------- footer (YCA-style architecture) ---------- */
+  .warn-bar{
+    background:#1C1B19;
+    border-top:1px solid rgba(255,255,255,0.06);
+    padding:22px 24px;
+  }
+  .warn-inner{
+    max-width:1100px;margin:0 auto;
+    text-align:center;
+    font-size:0.74rem;line-height:1.8;color:#C9C4BA;font-weight:300;
+  }
+  .warn-inner .warn-ico{color:var(--gold);margin-right:6px}
+  footer{
+    background:#050403;
+    border-top:1px solid rgba(255,255,255,0.06);
+    padding:44px 24px 34px;
+  }
+  .foot-wrap{max-width:1100px;margin:0 auto}
+  .foot-top{
+    display:flex;justify-content:space-between;align-items:flex-start;gap:28px;flex-wrap:wrap;
+  }
+  .foot-brand .name{
+    font-family:'EB Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--cream);
+    letter-spacing:0.02em;
+  }
+  .foot-brand .name span{color:var(--gold)}
+  .foot-brand .sub{font-size:0.72rem;color:#B9B4AA;margin-top:6px;font-weight:300}
+  .foot-links{display:flex;gap:26px;flex-wrap:wrap;padding-top:6px}
+  .foot-links a{
+    font-size:0.74rem;color:#D8D3C9;text-decoration:underline;text-underline-offset:3px;
+    font-weight:400;
+  }
+  .foot-links a:hover{color:var(--carolina)}
+  .disclaimer-block{display:grid;gap:18px;margin-top:34px}
+  .disclaimer{
+    font-size:0.72rem;line-height:1.75;color:var(--muted);font-weight:300;
+  }
+  .disclaimer strong{
+    color:var(--gold);font-weight:700;letter-spacing:0.05em;
+  }
+  .disclaimer a{color:var(--gold-deep);text-decoration:none}
+  .disclaimer a:hover{text-decoration:underline}
+  .foot-legal{
+    margin-top:34px;padding-top:22px;
+    border-top:1px solid rgba(255,255,255,0.06);
+    display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+    font-size:0.7rem;color:#8F8A80;
+  }
+  .foot-legal .tagline{color:#6E6A62}
+  /* ---------- legal modals ---------- */
+  .legal-overlay{
+    position:fixed;inset:0;background:rgba(0,0,0,0.82);backdrop-filter:blur(3px);
+    display:none;align-items:center;justify-content:center;z-index:200;padding:24px;
+  }
+  .legal-overlay.open{display:flex}
+  .legal-panel{
+    background:#0B0A08;border:1px solid rgba(239,190,69,0.35);border-radius:14px;
+    max-width:760px;width:100%;max-height:82vh;display:flex;flex-direction:column;
+    box-shadow:0 0 60px rgba(239,190,69,0.12);
+  }
+  .legal-head{
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:22px 28px;border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .legal-head h3{
+    font-family:'EB Garamond',serif;font-size:1.35rem;font-weight:600;color:var(--gold);margin:0;
+  }
+  .legal-close{
+    background:none;border:1px solid rgba(255,255,255,0.25);color:var(--cream);
+    width:34px;height:34px;border-radius:50%;font-size:1rem;cursor:pointer;line-height:1;
+  }
+  .legal-close:hover{border-color:var(--carolina);color:var(--carolina)}
+  .legal-body{
+    overflow-y:auto;padding:24px 28px 30px;
+    font-size:0.8rem;line-height:1.85;color:#C9C4BA;font-weight:300;
+  }
+  .legal-body h4{
+    color:var(--gold);font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:700;
+    letter-spacing:0.14em;text-transform:uppercase;margin:22px 0 8px;
+  }
+  .legal-body h4:first-child{margin-top:0}
+  .legal-body p{margin:0 0 12px}
+  .legal-body a{color:var(--gold-deep);text-decoration:none}
+  .legal-body a:hover{color:var(--carolina)}
+  .legal-body .updated{font-size:0.68rem;color:#8F8A80;margin-bottom:18px}
+  @media (max-width:640px){
+    .foot-top{flex-direction:column}
+    .foot-legal{flex-direction:column;text-align:center}
+  }
+
+  /* ---------- motion ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .cta,.benefit{transition:none}
+    .track{animation:none !important;flex-wrap:wrap;width:auto;justify-content:center}
+    .rotator .phrase{transition:none}
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:900px){
+    .benefit-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:640px){
+    .benefit-grid,.voice-grid{grid-template-columns:1fr}
+    .price + .price{border-left:none;border-top:1px solid rgba(75,156,211,0.45);margin-top:10px;padding-top:24px}
+    .guarantee{flex-direction:column;text-align:center}
+    .guarantee-text{text-align:center}
+    header{flex-direction:column;gap:16px}
+    .track span{font-size:1.2rem}
+  }
+</style>
+</head>
+<body>
+
+<div class="disclosure-bar"><b>Sponsored</b> &nbsp;·&nbsp; Independent member referral page of The People's Freedom Network</div>
+
+<header>
+  <div class="wordmark">
+    <div class="name">Coach <span>Toni</span></div>
+    <div class="sub">Independent Member · The People's Freedom Network</div>
+  </div>
+  <a class="header-cta" href="https://coacht.tpfn.fyi" target="_blank" rel="noopener">Start Saving Today</a>
+</header>
+
+<section class="hero">
+  <span class="eyebrow">The People's Freedom Network</span>
+  <h1>Keep more of the money
+    <span class="rotator" id="rotator">
+      <span class="phrase on">you already earn.</span>
+      <span class="phrase">you work so hard for.</span>
+      <span class="phrase">your family counts on.</span>
+      <span class="phrase">you deserve to keep.</span>
+      <span class="phrase">you've been giving away.</span>
+    </span>
+  </h1>
+  <p class="lead">One membership unlocks member pricing on the things your family already buys — shopping, dining, travel, and everyday services — through The People's Freedom Network savings programs.</p>
+  <div class="cta-row">
+    <a class="cta" href="https://coacht.tpfn.fyi" target="_blank" rel="noopener">Start Saving Today</a>
+    <p class="note"><a class="more-link" href="https://coacht.tpfn.biz" target="_blank" rel="noopener">Explore full membership details &rarr;</a></p>
+  </div>
+  <div class="trust-line">
+    <span>Member Discounts Worldwide</span><span class="dot"></span>
+    <span>30-Day Money-Back Guarantee</span><span class="dot"></span>
+    <span>Cancel Anytime</span>
+  </div>
+</section>
+
+<section class="video-sec">
+  <div class="reveal">
+    <div class="sec-rule"></div>
+    <h2>See how it works — in <em>under two minutes.</em></h2>
+    <div class="video-frame">
+      <video controls playsinline preload="metadata">
+        <source src="TPFN_Savings_Video%20(1)_new.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <p class="watch-note">Tap to play &middot; Sound on</p>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-rule"></div>
+      <h2>Where members <em>save</em></h2>
+      <p>Your membership opens the door to discount programs negotiated for the network's members — savings you use on ordinary days, not just special occasions.</p>
+    </div>
+    <div class="benefit-grid">
+      <div class="benefit reveal">
+        <svg class="glyph" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 14h28l-3 20a3 3 0 0 1-3 2.6H14a3 3 0 0 1-3-2.6L8 14z"/><path d="M16 14v-3a6 6 0 0 1 12 0v3"/></svg>
+        <h3>Shopping</h3>
+        <p>Member pricing and deals across everyday retail purchases, from household basics to bigger buys.</p>
+      </div>
+      <div class="benefit reveal">
+        <svg class="glyph" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 8v12a4 4 0 0 0 4 4v12"/><path d="M10 8v6M18 8v6"/><path d="M30 8c-3 0-4 4-4 8s1 6 4 6v14"/></svg>
+        <h3>Dining</h3>
+        <p>Restaurant savings that turn a night out into a smart decision instead of a splurge.</p>
+      </div>
+      <div class="benefit reveal">
+        <svg class="glyph" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 30l32-12-4 14-8-2-6 6-2-8-12-0z" stroke-linejoin="round"/></svg>
+        <h3>Travel &amp; Hotels</h3>
+        <p>Member rates on hotels and travel so the family trip costs less than the public price.</p>
+      </div>
+      <div class="benefit reveal">
+        <svg class="glyph" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="22" cy="22" r="7"/><path d="M22 4v6M22 34v6M4 22h6M34 22h6M9 9l4.5 4.5M30.5 30.5L35 35M35 9l-4.5 4.5M13.5 30.5L9 35"/></svg>
+        <h3>Everyday Services</h3>
+        <p>Discounts on the recurring services and errands that quietly drain a monthly budget.</p>
+      </div>
+      <div class="benefit key reveal">
+        <svg class="glyph" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 4l5 10 11 1.5-8 7.8 2 11-10-5.4-10 5.4 2-11-8-7.8L17 14z" stroke-linejoin="round"/></svg>
+        <h3>Premium Savings Club</h3>
+        <p>The upgraded tier of deeper member discounts, unlocked with the optional annual activation.</p>
+      </div>
+      <div class="benefit key reveal">
+        <svg class="glyph" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="12" width="32" height="22" rx="3"/><path d="M6 19h32"/><path d="M12 27h8"/></svg>
+        <h3>Instant Cash Back</h3>
+        <p>Earn cash back on qualifying member purchases, credited to you instead of left on the table.</p>
+        <span class="fine">Instant Cash Back transactions may include a small processing fee.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="retailers">
+  <div class="sec-head reveal">
+    <div class="sec-rule"></div>
+    <h2>Save where you <em>already shop, eat &amp; travel</em></h2>
+    <p>These are the kinds of names inside the member portal — from the checkout line to the boarding gate.</p>
+  </div>
+  <div class="cat-label"><span>Retailers</span></div>
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Amazon</span><span>Walmart</span><span>Target</span><span>Costco</span><span>Best Buy</span><span>Home Depot</span><span>Lowe's</span><span>Kohl's</span><span>Macy's</span><span>Walgreens</span><span>CVS</span><span>Apple</span><span>Sephora</span><span>Old Navy</span><span>Gap</span><span>Adidas</span><span>Dick's Sporting Goods</span><span>Bass Pro Shops</span>
+      <span>Amazon</span><span>Walmart</span><span>Target</span><span>Costco</span><span>Best Buy</span><span>Home Depot</span><span>Lowe's</span><span>Kohl's</span><span>Macy's</span><span>Walgreens</span><span>CVS</span><span>Apple</span><span>Sephora</span><span>Old Navy</span><span>Gap</span><span>Adidas</span><span>Dick's Sporting Goods</span><span>Bass Pro Shops</span>
+    </div>
+  </div>
+  <div class="cat-label"><span>Restaurants</span></div>
+  <div class="marquee reverse" aria-hidden="true">
+    <div class="track">
+      <span>McDonald's</span><span>Subway</span><span>Olive Garden</span><span>Texas Roadhouse</span><span>Outback</span><span>The Cheesecake Factory</span><span>Applebee's</span><span>Chili's</span><span>IHOP</span><span>Domino's</span><span>Pizza Hut</span><span>Burger King</span><span>Wendy's</span><span>Taco Bell</span><span>Red Lobster</span><span>LongHorn Steakhouse</span><span>Buffalo Wild Wings</span><span>Denny's</span>
+      <span>McDonald's</span><span>Subway</span><span>Olive Garden</span><span>Texas Roadhouse</span><span>Outback</span><span>The Cheesecake Factory</span><span>Applebee's</span><span>Chili's</span><span>IHOP</span><span>Domino's</span><span>Pizza Hut</span><span>Burger King</span><span>Wendy's</span><span>Taco Bell</span><span>Red Lobster</span><span>LongHorn Steakhouse</span><span>Buffalo Wild Wings</span><span>Denny's</span>
+    </div>
+  </div>
+  <div class="cat-label"><span>Travel &amp; Entertainment</span></div>
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Hotels.com</span><span>Delta</span><span>American Airlines</span><span>Southwest</span><span>Carnival</span><span>Royal Caribbean</span><span>Princess Cruises</span><span>Celebrity Cruises</span><span>Car Rentals</span><span>Movie Tickets</span><span>Concert Tickets</span><span>Sports Tickets</span>
+      <span>Hotels.com</span><span>Delta</span><span>American Airlines</span><span>Southwest</span><span>Carnival</span><span>Royal Caribbean</span><span>Princess Cruises</span><span>Celebrity Cruises</span><span>Car Rentals</span><span>Movie Tickets</span><span>Concert Tickets</span><span>Sports Tickets</span>
+    </div>
+  </div>
+  <div class="cat-label"><span>Recently Added</span></div>
+  <div class="marquee reverse" aria-hidden="true">
+    <div class="track">
+      <span>Starbucks</span><span>Kroger</span><span>Nike</span><span>Expedia</span><span>Victoria's Secret</span><span>The Container Store</span><span>DoorDash</span><span>Instacart</span><span>Airbnb</span><span>Paramount+</span><span>lululemon</span><span>Academy Sports</span>
+      <span>Starbucks</span><span>Kroger</span><span>Nike</span><span>Expedia</span><span>Victoria's Secret</span><span>The Container Store</span><span>DoorDash</span><span>Instacart</span><span>Airbnb</span><span>Paramount+</span><span>lululemon</span><span>Academy Sports</span>
+    </div>
+  </div>
+  <p class="note">A sample of participating merchants from The People's Freedom Network member programs. Merchants and offers vary and are subject to change.</p>
+</section>
+
+<section class="offer">
+  <div class="offer-card reveal">
+    <div class="rule"></div>
+    <h2>Membership, <em>plainly priced</em></h2>
+    <p class="tagline">No hidden tiers. No fine-print surprises. This is the whole price.</p>
+    <div class="price-row">
+      <div class="price">
+        <div class="amount"><sup>$</sup>50</div>
+        <div class="label">One-Time Enrollment</div>
+        <div class="detail">Paid once, when you join</div>
+      </div>
+      <div class="price">
+        <div class="amount"><sup>$</sup>10</div>
+        <div class="label">Monthly Membership<span class="star">*</span></div>
+        <div class="detail">Begins your second month</div>
+      </div>
+    </div>
+    <p class="note">Optional $24 annual activation unlocks Premium Savings &amp; Instant Cash Back.</p>
+    <p class="waiver">*Your $10 monthly membership is waived when you introduce the savings program to 5 loved ones who enroll and remain active members.</p>
+    <div class="cta-row">
+      <a class="cta" href="https://coacht.tpfn.fyi" target="_blank" rel="noopener">Start Saving Today</a>
+      <p class="note"><a class="more-link" href="https://coacht.tpfn.biz" target="_blank" rel="noopener">Explore full membership details &rarr;</a></p>
+    </div>
+    <div class="guarantee">
+      <svg class="seal" viewBox="0 0 120 120" fill="none" aria-hidden="true">
+        <circle cx="60" cy="60" r="56" stroke="#EFBE45" stroke-width="1.5"/>
+        <circle cx="60" cy="60" r="49" stroke="#EFBE45" stroke-width="0.75" stroke-dasharray="2 3"/>
+        <circle cx="60" cy="60" r="34" stroke="#EFBE45" stroke-width="1"/>
+        <path id="arcTop" d="M 60 60 m -42 0 a 42 42 0 1 1 84 0" fill="none"/>
+        <text font-family="Montserrat,sans-serif" font-size="9" letter-spacing="3.5" fill="#EFBE45" font-weight="600">
+          <textPath href="#arcTop" startOffset="14%">MONEY-BACK GUARANTEE</textPath>
+        </text>
+        <text x="60" y="56" text-anchor="middle" font-family="EB Garamond,serif" font-size="30" font-weight="600" fill="#EFBE45">30</text>
+        <text x="60" y="72" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="8" letter-spacing="3" fill="#EFBE45" font-weight="600">DAYS</text>
+        <path d="M28 92 L38 96 L48 92" stroke="#4B9CD3" stroke-width="1" fill="none"/>
+        <path d="M72 92 L82 96 L92 92" stroke="#4B9CD3" stroke-width="1" fill="none"/>
+      </svg>
+      <div class="guarantee-text">
+        <b>30-Day Money-Back Guarantee</b>
+        <p>Try the membership. If it isn't for you, request a refund within your first 30 days — no hard feelings, no hoops.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="voices">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-rule"></div>
+      <h2>Members, in their <em>own words</em></h2>
+    </div>
+    <div class="voice-grid">
+      <div class="voice reveal">
+        <blockquote>&ldquo;I have only been in the program for 2 months and already have saved $400+ just buying stuff I was already purchasing. I love it here !!!!! I have told several of my family members and they are enjoying savings too and now my monthly $10 is waived.&rdquo;</blockquote>
+        <div class="who">
+          <b>Jessica S.</b>
+          <span>Miami, Florida</span>
+        </div>
+      </div>
+      <div class="voice reveal">
+        <blockquote>&ldquo;This is the most fair and straight forward program I've seen. It's a game changer, it touches everybody.&rdquo;</blockquote>
+        <div class="who">
+          <b>Demetrius C.</b>
+          <span>Kalamazoo, Michigan</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="reveal">
+    <span class="eyebrow">Your Move</span>
+    <h2>Start keeping more of every paycheck — <em>today.</em></h2>
+    <div class="cta-row">
+      <a class="cta" href="https://coacht.tpfn.fyi" target="_blank" rel="noopener">Start Saving Today</a>
+      <p class="note"><a class="more-link" href="https://coacht.tpfn.biz" target="_blank" rel="noopener">Explore full membership details &rarr;</a></p>
+    </div>
+  </div>
+</section>
+
+<div class="warn-bar">
+  <p class="warn-inner"><span class="warn-ico">&#9888;</span> Savings, earnings, and income statements made by The People's Freedom Network and its affiliates are estimates of what we think you can possibly save or earn. Any reference to savings or income potential is not a guarantee or warranty. Individual results vary and depend on each member's own usage, effort, commitment, and dedication. Any savings figures shown reflect estimated potential across available member programs and are not a promise of individual results.</p>
+</div>
+
+<footer>
+  <div class="foot-wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <div class="name">Coach <span>Toni</span></div>
+        <div class="sub">Independent Member · The People's Freedom Network · Charlotte, NC</div>
+      </div>
+      <div class="foot-links">
+        <a href="https://coacht.tpfn.fyi" target="_blank" rel="noopener">Enroll Now</a>
+        <a href="https://coacht.tpfn.biz" target="_blank" rel="noopener">Full Membership Details</a>
+        <a href="#" data-legal="privacy">Privacy Policy</a>
+        <a href="#" data-legal="terms">Terms</a>
+      </div>
+    </div>
+    <div class="disclaimer-block">
+      <p class="disclaimer"><strong>Independent Member Disclosure.</strong> This is the official referral page of an independent member of The People's Freedom Network (TPFN). This page is not the corporate website of TPFN. For complete company information, terms, and policies, visit <a href="https://coacht.tpfn.biz" target="_blank" rel="noopener">coacht.tpfn.biz</a>.</p>
+      <p class="disclaimer"><strong>Membership Pricing.</strong> Customer membership requires a one-time $50 enrollment fee and a $10 monthly subscription beginning the second month. The $10 monthly membership is waived for members who introduce the savings program to five (5) individuals who enroll and remain active members. An optional one-time $24 annual activation fee unlocks the Premium Savings Club and Instant Cash Back program. Instant Cash Back transactions may include a small processing fee. Memberships include a 30-day money-back guarantee; refund requests must be made within 30 days of enrollment.</p>
+      <p class="disclaimer"><strong>Trademark Notice.</strong> The People's Freedom Network and TPFN are trademarks of their respective owner. All other trademarks, product names, and company names referenced on this page — including merchant names shown for illustration — are the property of their respective owners, are used for identification purposes only, and do not imply endorsement.</p>
+    </div>
+    <div class="foot-legal">
+      <span>&copy; 2025&ndash;2026 · Independent Member of The People's Freedom Network · All rights reserved.</span>
+      <span class="tagline">Referral page · Not the corporate website · Savings vary</span>
+    </div>
+  </div>
+</footer>
+
+<div class="legal-overlay" id="legal-terms" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+  <div class="legal-panel">
+    <div class="legal-head">
+      <h3 id="terms-title">Terms of Use</h3>
+      <button class="legal-close" data-close aria-label="Close">&times;</button>
+    </div>
+    <div class="legal-body">
+      <p class="updated">Last updated: July 17, 2026</p>
+      <h4>1. Acceptance of These Terms</h4>
+      <p>Welcome. This website is the personal referral page of Coach Toni, an independent member of The People's Freedom Network ("TPFN"), based in Charlotte, North Carolina. By visiting or using this website, you agree to these Terms of Use. If you do not agree, please do not use this site.</p>
+      <h4>2. What This Website Is</h4>
+      <p>This website exists for one purpose: to introduce you to the TPFN savings membership and refer you to the official TPFN enrollment and information pages. This site is informational only. It is not the corporate website of TPFN, and it does not process enrollments, payments, or memberships directly. All enrollment, billing, membership terms, and program benefits are handled by TPFN on its own websites under its own terms.</p>
+      <h4>3. No Guarantees</h4>
+      <p>Any savings figures, examples, or testimonials shown on this site reflect estimated potential or individual experiences and are not a promise or guarantee of your results. Your results depend on your own usage of the membership. Nothing on this site is financial, legal, or tax advice.</p>
+      <h4>4. Third-Party Links</h4>
+      <p>This site links to websites operated by TPFN and other third parties. Those sites have their own terms and privacy policies, which govern your use of them. We are not responsible for the content, policies, or practices of any third-party website.</p>
+      <h4>5. Intellectual Property</h4>
+      <p>The design, layout, and original text of this website belong to the site owner. The People's Freedom Network name, TPFN marks, and all merchant names mentioned on this site are the property of their respective owners and are used for identification only.</p>
+      <h4>6. Acceptable Use</h4>
+      <p>You agree not to misuse this website — including attempting to interfere with its operation, copying it to misrepresent yourself as the site owner, or using it for any unlawful purpose.</p>
+      <h4>7. Limitation of Liability</h4>
+      <p>This website is provided "as is." To the fullest extent permitted by law, the site owner is not liable for any damages arising from your use of this site or from your enrollment in or use of any third-party program this site refers you to.</p>
+      <h4>8. Changes to These Terms</h4>
+      <p>These Terms may be updated from time to time. The "Last updated" date above reflects the current version. Continued use of the site after changes means you accept the updated Terms.</p>
+      <h4>9. Governing Law</h4>
+      <p>These Terms are governed by the laws of the State of North Carolina, without regard to conflict-of-law principles.</p>
+      <h4>10. Contact</h4>
+      <p>Questions about this website or these Terms? Reach out through <a href="https://www.abmconsultants.org" target="_blank" rel="noopener">abmconsultants.org</a>.</p>
+    </div>
+  </div>
+</div>
+
+<div class="legal-overlay" id="legal-privacy" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+  <div class="legal-panel">
+    <div class="legal-head">
+      <h3 id="privacy-title">Privacy Policy</h3>
+      <button class="legal-close" data-close aria-label="Close">&times;</button>
+    </div>
+    <div class="legal-body">
+      <p class="updated">Last updated: July 17, 2026</p>
+      <h4>1. The Short Version</h4>
+      <p>This website respects your privacy. It has no sign-up forms, no accounts, and it does not ask you for — or collect — your name, email, phone number, or payment information. We keep it simple on purpose.</p>
+      <h4>2. Information We Do Not Collect</h4>
+      <p>This site does not collect personal information directly, does not set advertising or tracking cookies of its own, and does not sell or share visitor information with anyone.</p>
+      <h4>3. Basic Technical Data</h4>
+      <p>Like nearly every website on the internet, our hosting provider may automatically log basic technical information when you visit — such as your browser type, device type, and general connection data — for security and performance purposes. This standard server data is handled by the hosting provider and is not used by us to identify you.</p>
+      <h4>4. Third-Party Websites</h4>
+      <p>When you click "Start Saving Today," "Enroll Now," or any membership link, you leave this website and go to pages operated by The People's Freedom Network (TPFN). Any information you provide there — including enrollment and payment details — is collected and handled by TPFN under its own privacy policy, not ours. We encourage you to review the privacy policy of any website where you share personal information.</p>
+      <h4>5. Embedded Content</h4>
+      <p>This site may load fonts or media from trusted third-party services (such as Google Fonts) to display properly. Those services may receive standard technical requests from your browser as part of delivering that content.</p>
+      <h4>6. Children's Privacy</h4>
+      <p>This website is intended for adults and is not directed to children under 18. We do not knowingly collect information from children.</p>
+      <h4>7. Changes to This Policy</h4>
+      <p>We may update this Privacy Policy from time to time. The "Last updated" date above reflects the current version.</p>
+      <h4>8. Contact</h4>
+      <p>Questions about privacy on this website? Reach out through <a href="https://www.abmconsultants.org" target="_blank" rel="noopener">abmconsultants.org</a>.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // scroll reveals + illuminating pass on benefit boxes
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+        if(e.target.classList.contains('benefit')){
+          e.target.classList.add('lit');
+          setTimeout(()=>e.target.classList.remove('lit'),1600);
+        }
+        io.unobserve(e.target);
+      }
+    });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // rotating headline endings
+  const phrases = document.querySelectorAll('#rotator .phrase');
+  let idx = 0;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!reduced && phrases.length > 1){
+    setInterval(()=>{
+      phrases[idx].classList.remove('on');
+      idx = (idx + 1) % phrases.length;
+      phrases[idx].classList.add('on');
+    }, 3400);
+  }
+
+  // legal modals (Terms of Use / Privacy Policy)
+  document.querySelectorAll('[data-legal]').forEach(link=>{
+    link.addEventListener('click', e=>{
+      e.preventDefault();
+      document.getElementById('legal-' + link.dataset.legal).classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  function closeLegal(){
+    document.querySelectorAll('.legal-overlay.open').forEach(o=>o.classList.remove('open'));
+    document.body.style.overflow = '';
+  }
+  document.querySelectorAll('[data-close]').forEach(btn=>btn.addEventListener('click', closeLegal));
+  document.querySelectorAll('.legal-overlay').forEach(o=>{
+    o.addEventListener('click', e=>{ if(e.target === o) closeLegal(); });
+  });
+  document.addEventListener('keydown', e=>{ if(e.key === 'Escape') closeLegal(); });
+</script>
+
+</body>
+</html>
