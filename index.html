@@ -333,6 +333,68 @@
     font-size:0.76rem;color:#FFFFFF;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;
   }
 
+  /* ---------- your websites ---------- */
+  .sites{background:#070605}
+  .sites .sec-head p b{color:var(--carolina);font-weight:600}
+  .sites-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:30px;
+    max-width:940px;margin:0 auto;
+  }
+  @media(max-width:860px){.sites-grid{grid-template-columns:1fr}}
+  .site-card{
+    position:relative;
+    background:var(--pure);
+    border:1px solid rgba(255,255,255,0.1);
+    border-top:2px solid var(--gold);
+    border-radius:6px;
+    padding:38px 34px 34px;
+    text-align:center;
+    box-shadow:0 0 26px rgba(239,190,69,0.28),0 0 64px rgba(239,190,69,0.1);
+  }
+  .site-card.blue{
+    border-top:2px solid var(--carolina);
+    box-shadow:0 0 26px rgba(75,156,211,0.45),0 0 64px rgba(75,156,211,0.18);
+  }
+  .site-card .badge{
+    position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+    background:var(--gold);color:var(--ink);
+    font-size:0.64rem;letter-spacing:0.2em;text-transform:uppercase;
+    font-weight:700;padding:6px 16px;border-radius:999px;white-space:nowrap;
+  }
+  .site-card h3{
+    font-family:'EB Garamond',serif;font-weight:600;
+    font-size:1.4rem;color:var(--cream);
+  }
+  .site-card .amount{
+    font-family:'EB Garamond',serif;font-weight:600;
+    font-size:clamp(2.6rem,4.5vw,3.4rem);color:var(--gold);line-height:1;
+    margin-top:14px;text-shadow:0 0 30px rgba(239,190,69,0.25);
+  }
+  .site-card .amount sup{font-size:0.45em;font-weight:500;vertical-align:super}
+  .site-card.blue .amount{color:var(--carolina);text-shadow:0 0 30px rgba(75,156,211,0.3)}
+  .site-card .terms{
+    font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;
+    color:var(--cream);font-weight:600;margin-top:10px;
+  }
+  .site-card ul{list-style:none;margin:24px auto 0;max-width:40ch;text-align:left}
+  .site-card li{
+    position:relative;padding:9px 0 9px 24px;
+    font-size:0.86rem;font-weight:300;color:var(--body);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .site-card li:last-child{border-bottom:none}
+  .site-card li::before{
+    content:"";position:absolute;left:2px;top:16px;
+    width:7px;height:7px;border:1px solid var(--gold);
+    transform:rotate(45deg);
+  }
+  .site-card.blue li::before{border-color:var(--carolina)}
+  .sites .cta-row{margin-top:44px;text-align:center}
+  .sites .order-note{
+    max-width:56ch;margin:16px auto 0;
+    font-size:0.8rem;font-weight:300;color:var(--muted);
+  }
+
   /* ---------- final cta ---------- */
   .final{
     text-align:center;
@@ -675,6 +737,44 @@
           <span>Kalamazoo, Michigan</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="sites" id="your-sites">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-rule"></div>
+      <h2>Sharing the savings? Get your <em>own websites.</em></h2>
+      <p>When you introduce this program to the people you love, your own professionally built marketing sites can do the presenting for you — a <b>Savings Membership site</b> like this one and a <b>Business Opportunity site</b>, on your own custom domain, with every lead and every sign-up credited directly to you.</p>
+    </div>
+    <div class="sites-grid">
+      <div class="site-card reveal">
+        <span class="badge">Best Value</span>
+        <h3>Complete Package</h3>
+        <div class="amount"><sup>$</sup>299</div>
+        <div class="terms">One-Time</div>
+        <ul>
+          <li>Both sites — the Savings Membership site and the Business Opportunity site</li>
+          <li>2 custom domains of your choice</li>
+          <li>12 months of hosting for both sites included</li>
+          <li>Built with your name, your links, and your leads delivered to your inbox</li>
+        </ul>
+      </div>
+      <div class="site-card blue reveal">
+        <h3>Single Site</h3>
+        <div class="amount"><sup>$</sup>134</div>
+        <div class="terms">Due Today &middot; Then $10/Month</div>
+        <ul>
+          <li>One site of your choice — Savings Membership or Business Opportunity</li>
+          <li>$99 setup + $25 custom domain + $10/month hosting</li>
+          <li>Built with your name, your links, and your leads delivered to your inbox</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cta-row reveal">
+      <a class="cta" href="https://tpfn-biz-opp.com/team-site-intake-form.html">Order My Websites</a>
+      <p class="order-note">You'll complete a short order form, then go straight to secure Stripe checkout. Your build begins as soon as payment is received.</p>
     </div>
   </div>
 </section>
